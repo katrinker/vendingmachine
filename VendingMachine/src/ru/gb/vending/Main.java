@@ -9,7 +9,7 @@ public class Main {
         HotDrinksVendingMachine hotDrinksVendingMachine = new HotDrinksVendingMachine();
 
         hotDrinksVendingMachine.addCoffee("latte", 110, 0.3, 40);
-        Coffee latte = (Coffee) hotDrinksVendingMachine.addCoffee("latte", 110, 0.3, 40);
+
 
         hotDrinksVendingMachine.getProduct("latte");
 
