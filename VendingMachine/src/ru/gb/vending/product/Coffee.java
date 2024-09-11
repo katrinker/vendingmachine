@@ -1,6 +1,8 @@
 package ru.gb.vending.product;
 
-public class Coffee extends Product {
+import java.io.Serializable;
+
+public class Coffee extends Product implements Serializable {
     private  double volume;
     private int temperature;
 
@@ -11,19 +13,21 @@ public class Coffee extends Product {
     }
 
     public double getVolume() {
-        return volume;
+        return super.volume;
     }
 
-    public void setVolume(double volume) {
-        this.volume = volume;
+    public double setVolume(double volume) {
+        super.volume = volume;
+        return volume;
     }
 
     public int getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(int temperature) {
+    public int setTemperature(int temperature) {
         this.temperature = temperature;
+        return temperature;
     }
 
     @Override

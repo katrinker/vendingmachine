@@ -4,20 +4,27 @@ import ru.gb.vending.builder.CoffeeBuilder;
 import ru.gb.vending.product.Coffee;
 import ru.gb.vending.product.Product;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
-public class  HotDrinksVendingMachine implements VendingMachine{
+public class  HotDrinksVendingMachine implements VendingMachine, Serializable {
     private List<Product> products;
     private CoffeeBuilder coffeeBuilder;
 
     public HotDrinksVendingMachine() {
-        coffeeBuilder = new CoffeeBuilder();
+        this(new ArrayList<>());
+        this.coffeeBuilder = new CoffeeBuilder();
+    }
+
+    public HotDrinksVendingMachine(List<Product> products) {
         this.products = products;
     }
 
-    public void addCoffee(String name, double price, double volume, int temperature) {
+    public Coffee addCoffee(String name, double price, double volume, int temperature) {
         Coffee coffee = coffeeBuilder.build(name, price, volume, temperature);
         products.add(coffee);
+        return coffee;
     }
 
     public Product getProduct(String nameProduct) {

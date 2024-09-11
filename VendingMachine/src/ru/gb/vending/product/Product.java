@@ -1,9 +1,11 @@
 package ru.gb.vending.product;
 
-public abstract class  Product {
+import java.io.Serializable;
+
+public abstract class  Product implements Serializable {
     private final String name;
     private final double price;
-    private double volume;
+    double volume;
 
     public Product(String name, double price) {
         this.name = name;
